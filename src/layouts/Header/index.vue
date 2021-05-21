@@ -9,6 +9,9 @@
         },
         about: {
           name: 'about'
+        },
+        todolist: {
+          name: 'todolist'
         }
       })
 
@@ -23,5 +26,7 @@
   <div>
     <router-link :to="routes.home">Home</router-link>
     <router-link :to="routes.about">About</router-link>
+    <router-link :to="routes.todolist">Todolist</router-link>
+
   </div>
 </template>

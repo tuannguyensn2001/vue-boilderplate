@@ -1,17 +1,15 @@
-import {getAllPosts} from "../respoitories";
-import {reactive} from 'vue';
 
-export const usePosts = () => {
-    const state = reactive({
-        lists: [],
-    });
+import {ref} from 'vue';
 
-    getAllPosts()
-        .then(response => {
-            state.lists = response;
-        })
-        .catch(err => console.log(err));
+export const useTodoList = () => {
+    const lists = ref(['tuấn nhokvip']);
+
+    const addTask = value => {
+        lists.value.push(value);
+    }
+
+    return {lists,addTask}
 
 
-    return {state};
+
 }
