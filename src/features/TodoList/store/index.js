@@ -7,13 +7,13 @@ const TodoListStore = {
         todolist: (state) => state.lists
     },
     mutations: {
-        push(state,payload){
+        todoListPush(state,payload){
             state.lists.push(payload);
         }
     },
     actions: {
         push(context,payload){
-            context.commit('push',payload);
+            context.commit('todoListPush',payload);
         }
     }
 }

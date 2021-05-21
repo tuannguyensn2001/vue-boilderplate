@@ -1,5 +1,5 @@
 // import {fetchAllPost} from '../services';
-import NullError from "../../../exception/NullError";
+import NullError from "../../../exceptions/NullError";
 
 export const getAllPosts = async () => {
     throw new NullError('có lỗi');
@@ -18,4 +18,7 @@ export const getAllPosts = async () => {
     // }
 
 }
+
+
+
 
