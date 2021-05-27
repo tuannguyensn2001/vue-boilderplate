@@ -1,41 +1,37 @@
 <template>
   <div>
-    <Header/>
+    <Header />
     <router-view></router-view>
   </div>
-
 </template>
 
 <script>
-
-import Header from './layouts/Header';
-import {provide, reactive} from "vue";
+import Header from "./layouts/Header";
+import { useQueryProvider } from "vue-query";
+import { provide, reactive } from "vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    Header
+    Header,
   },
   setup() {
-
+    useQueryProvider();
     const auth = reactive({
-      token: 'abcsdd',
+      token: "abcsdd",
       id: 1,
-      isLogin: true
+      isLogin: true,
     });
 
-    provide('auth',auth);
+    provide("auth", auth);
 
-    provide('changeAuth',() => {
-      console.log('click');
+    provide("changeAuth", () => {
+      console.log("click");
       auth.isLogin = !auth.isLogin;
       auth.id++;
-    })
+    });
 
-    return {auth}
-
-
-  }
-}
+    return { auth };
+  },
+};
 </script>
-
